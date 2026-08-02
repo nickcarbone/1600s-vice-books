@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Bottle, the Pipe, the Table, the Town — Sixteen Books, 1534–1795</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0b0d;
+  --rule:#2a2a31;
+  --paper:#e8e6e0;
+  --dim:#8d8d99;
+  --yellow:#f5c518;
+  --cyan:#4dd8e0;
+  --red:#e0463c;
+  --display:"Big Shoulders Display",Impact,sans-serif;
+  --body:"Source Serif 4",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--cyan);text-decoration:none;border-bottom:1px solid rgba(77,216,224,.3)}
+a:hover{border-bottom-color:var(--cyan)}
+a:focus-visible{outline:2px solid var(--yellow);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+header{border-bottom:1px solid var(--rule);padding:76px 0 40px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin:0 0 22px}
+.eyebrow a{color:var(--red);border-bottom-color:rgba(224,70,60,.35)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.9rem,9.5vw,7.4rem);line-height:.86;letter-spacing:-.01em;margin:0;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--yellow)}
+.standfirst{max-width:64ch;margin:30px 0 0;font-size:1.16rem;color:#c9c7c0;font-weight:300}
+.meta-rail{display:flex;flex-wrap:wrap;gap:26px;margin-top:34px;font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--dim)}
+.meta-rail b{color:var(--paper);font-weight:500}
+
+.section-head{display:flex;align-items:baseline;gap:20px;padding:74px 0 6px;border-bottom:1px solid var(--rule)}
+.section-head h2{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:clamp(1.7rem,4vw,2.6rem);letter-spacing:.02em;margin:0;color:var(--yellow)}
+.section-head .count{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.15em}
+.section-note{font-family:var(--mono);font-size:12.5px;color:var(--dim);line-height:1.7;max-width:66ch;margin:16px 0 0}
+
+.entry{display:grid;grid-template-columns:132px 1fr;gap:34px;padding:52px 0;border-bottom:1px solid var(--rule)}
+.spine{position:relative}
+.year{font-family:var(--display);font-weight:800;font-size:3.5rem;line-height:.82;color:var(--paper);letter-spacing:-.02em}
+.year span{display:block;color:var(--rule)}
+.spine .tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:14px;display:block;line-height:1.9}
+.spine .tag.vice{color:var(--yellow)}
+
+.entry h3{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:clamp(1.5rem,3.4vw,2.25rem);line-height:1.02;margin:0 0 4px}
+.byline{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin:0 0 26px}
+.field{margin:0 0 22px}
+.field-label{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);display:block;margin-bottom:7px}
+.field p{margin:0;max-width:70ch}
+.field p + p{margin-top:12px}
+
+.reads{border-left:2px solid var(--cyan);padding:2px 0 2px 18px;margin-top:26px}
+.reads .field-label{color:var(--cyan)}
+.read{margin:0 0 10px;font-family:var(--mono);font-size:12.5px;line-height:1.6}
+.read:last-child{margin-bottom:0}
+.read .kind{color:var(--dim);letter-spacing:.1em;text-transform:uppercase;font-size:10px;display:block}
+.read a{word-break:break-word}
+
+.caveat{border:1px solid var(--red);border-left-width:3px;padding:18px 22px;margin-top:26px;background:rgba(224,70,60,.055)}
+.caveat .field-label{color:var(--red)}
+.caveat p{margin:0;font-size:.95rem;color:#d6d3cc}
+.caveat p + p{margin-top:10px}
+
+.preamble{
+  border:1px solid var(--rule);border-left:3px solid var(--yellow);
+  padding:26px 28px;margin:34px 0 0;background:rgba(245,197,24,.04)
+}
+.preamble p{margin:0 0 12px;max-width:70ch;color:#d6d3cc;font-size:1rem}
+.preamble p:last-child{margin-bottom:0}
+
+footer{padding:70px 0 90px}
+footer h2{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:1.7rem;color:var(--yellow);margin:0 0 18px}
+footer p{max-width:70ch;color:#c9c7c0;margin:0 0 14px}
+.colophon{margin-top:46px;padding-top:22px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+
+@media (max-width:720px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  header{padding:48px 0 32px}
+  .entry{grid-template-columns:1fr;gap:0;padding:42px 0}
+  .spine{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+  .year{font-size:2.6rem}
+  .year span{display:inline}
+  .spine .tag{margin-top:0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Volume two · companion to <em>Far Countries &amp; Painefull Peregrinations</em></p>
+    <h1>The Bottle,<br>the Pipe,<br>the Table,<br><em>the Town</em></h1>
+    <p class="standfirst">Sixteen books, 1534–1795, on what gentlemen actually did when they weren't improving themselves. Drink, tobacco, cards, fishing, London after dark, and the literature of sex — including the parts of it that don't survive contact with a modern conscience.</p>
+    <div class="meta-rail">
+      <span><b>16</b> titles</span>
+      <span><b>261</b> years</span>
+      <span><b>13</b> free in full</span>
+      <span><b>3</b> with access caveats</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ================= BOTTLE & PIPE ================= -->
+  <div class="section-head">
+    <h2>The bottle &amp; the pipe</h2>
+    <span class="count">Five</span>
+  </div>
+  <p class="section-note">Drinking and smoking arrived in English print as a joke, a royal denunciation and a set of recipes, roughly in that order. All three registers are here.</p>
+
+  <!-- Nashe -->
+  <article class="entry">
+    <div class="spine">
+      <div class="year">15<span>92</span></div>
+      <span class="tag vice">Drink</span>
+      <span class="tag">Eight kinds of drunkard</span>
+    </div>
+    <div>
+      <h3>Pierce Penilesse, His Supplication to the Divell</h3>
+      <p class="byline">Thomas Nashe · 1567–c.1601</p>
+      <div class="field"><span class="field-label">The book</span>
+      <p>A broke writer draws up a formal petition to the Devil, complaining that virtue goes unrewarded and vice unpunished, and uses the frame to anatomise London's sins one by one. The section on drunkenness is the famous one: Nashe sorts drunks into eight species — ape-drunk, lion-drunk, swine-drunk, sheep-drunk, and so on — each with its own behaviour, and notes with disgust that the English learned the habit from the Low Countries wars.</p></div>
+      <div class="field"><span class="field-label">The author</span>
+      <p>The most violent prose stylist of the Elizabethan pamphlet wars, a Cambridge man who lived by his pen and mostly failed to. He also wrote <em>The Unfortunate Traveller</em> and a piece of pornographic verse suppressed for three centuries. He died young and poor.</p></div>
+      <div class="field"><span class="field-label">What it means</span>
+      <p>The complaint form gives Nashe licence to describe what he claims to condemn, in far more detail than condemnation requires. That gap between stated purpose and evident appetite is the engine of the whole genre that follows — and Nashe is the first English writer to run it at full speed.</p></div>
+      <div class="field"><span class="field-label">Why it still matters</span>
+      <p>It is the origin point for English prose that gets its energy from contempt, and the taxonomy of drunkards has never been bettered. Anyone writing satire in English is downstream of this pamphlet whether they know it or not.</p></div>
+      <div class="reads"><span class="field-label">Read it free</span>
+        <p class="read"><span class="kind">Full text · Renascence Editions</span><a href="https://www.luminarium.org/renascence-editions/nashe1.html">luminarium.org/renascence-editions/nashe1.html</a></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- James I -->
+  <article class="entry">
+    <div class="spine">
+      <div class="year">16<span>04</span></div>
+      <span class="tag vice">Tobacco</span>
+      <span class="tag">Written by the king</span>
+    </div>
+    <div>
+      <h3>A Counterblaste to Tobacco</h3>
+      <p class="byline">James VI and I · 1566–1625</p>
+      <div class="field"><span class="field-label">The book</span>
+      <p>Twenty-odd pages of royal fury at smoking, published anonymously in 1604, in which the king argues from the medicine of the four humours that tobacco dries the brain, corrupts the blood, blackens the inward parts and makes a man's breath intolerable to his wife. It closes on the line about a custom loathsome to the eye and hateful to the nose. He raised the import duty by roughly 4,000 per cent the same year.</p></div>
+      <div class="field"><span class="field-label">The author</span>
+      <p>A working intellectual as well as a monarch — he also wrote on witchcraft, on kingship, and commissioned the Bible that carries his name. This is the rare polemic where the author can also legislate.</p></div>
+      <div class="field"><span class="field-label">What it means</span>
+      <p>One of the earliest anti-smoking publications anywhere, and a case study in an argument that reached the right conclusion by entirely wrong reasoning. James had no evidence; he had humoral theory, disgust, and a suspicion of anything imported from the Americas. He was still right.</p></div>
+      <div class="field"><span class="field-label">Why it still matters</span>
+      <p>Read it beside Brathwait's <em>Smoaking Age</em> below and you have both sides of the first mass-consumption controversy in English history, argued in the same decade. The duty hike also failed, which is its own lesson.</p></div>
+      <div class="reads"><span class="field-label">Read it free</span>
+        <p class="read"><span class="kind">Full text · Wikisource, "A Counter-Blaste to Tobacco"</span><a href="https://en.wikipedia.org/wiki/A_Counterblaste_to_Tobacco">Details and links via Wikipedia's entry</a></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Brathwait -->
+  <article class="entry">
+    <div class="spine">
+      <div class="year">16<span>17</span></div>
+      <span class="tag vice">Drink + tobacco</span>
+      <span class="tag">Two books in one</span>
+    </div>
+    <div>
+      <h3>A Solemne Joviall Disputation · and The Smoaking Age</h3>
+      <p class="byline">Richard Brathwait · 1588–1673 · as "Blasius Multibibus"</p>
+      <div class="field"><span class="field-label">The book</span>
+      <p>A mock-legal treatise on the jurisprudence of drinking — the hours lawful before and after noon, the solemnities and controversies, the whole thing argued according to the civil law under the authority of the goddess Potina, with Bacchus presiding. The first half is Brathwait's translation of a Continental drinking treatise; <em>The Smoaking Age, or the Man in the Mist</em>, bound after it, is his own.</p>
+      <p>Every detail of the imprint is a joke. It claims to be printed in Oenozphthopolis at the Sign of Red-eyes; it was in fact printed in London by Edward Griffin. The tobacco half carries its own title page, at the Sign of Teare-nose.</p></div>
+      <div class="field"><span class="field-label">The author</span>
+      <p>A Westmorland gentleman, Oriel College man and member of Gray's Inn who inherited an estate and wrote prolifically — including <em>The English Gentleman</em>, a perfectly straight-faced conduct book, and <em>Drunken Barnaby's Four Journeys</em>. The same man produced the manual and the parody.</p></div>
+      <div class="field"><span class="field-label">What it means</span>
+      <p>The small octavo format was made for passing round a table. <em>The Smoaking Age</em> is the more interesting half: Brathwait imagines the tobacco shop as a political space where men meet to smoke, question travellers and discuss affairs of state — decades before the first English coffeehouse. He is describing a room that did not quite exist yet.</p></div>
+      <div class="field"><span class="field-label">Why it still matters</span>
+      <p>It is the earliest English argument that consumption creates sociability and sociability creates politics. That is the coffeehouse thesis, and Brathwait got there first, in a joke book about drinking law.</p></div>
+      <div class="caveat"><span class="field-label">Access caveat</span>
+        <p>This is the one hard-to-reach title on the list. Full scans sit behind Early English Books Online, which is institutional. Library catalogue records confirm the contents and the joke imprints; the Yale Center for British Art holds a copy and describes it in detail: <a href="https://collections.britishart.yale.edu/catalog/orbis:1185688">collections.britishart.yale.edu/catalog/orbis:1185688</a></p>
+        <p>If you have any university library affiliation, EEBO gets you the text. Otherwise William Marshall's two engraved frontispieces — "The Lawes of Drinking" and "The Smoaking Age" — circulate freely and are worth seeing on their own.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Digby -->
+  <article class="entry">
+    <div class="spine">
+      <div class="year">16<span>69</span></div>
+      <span class="tag vice">Mead, cider, cookery</span>
+      <span class="tag">Posthumous</span>
+    </div>
+    <div>
+      <h3>The Closet of the Eminently Learned Sir Kenelme Digbie Kt. Opened</h3>
+      <p class="byline">Sir Kenelm Digby · 1603–1665</p>
+      <div class="field"><span class="field-label">The book</span>
+      <p>Published four years after Digby's death, by his son's consent. It is catalogued as a cookery book and it does contain meat pies, pasties and syllabub, but the centre of gravity is drink: something like a hundred variants of mead and metheglin, plus cider, cherry wine and ale, each attributed to the lord, lady or country parson Digby got it from. Recipes carry names — the way a good source list does.</p></div>
+      <div class="field"><span class="field-label">The author</span>
+      <p>Courtier, privateer, diplomat, duellist, founding fellow of the Royal Society, and promoter of the "powder of sympathy," a wound salve applied to the weapon rather than the injury. He fought a naval action at Scanderoon, was imprisoned by Parliament, and collected recipes everywhere he went.</p></div>
+      <div class="field"><span class="field-label">What it means</span>
+      <p>A working commonplace book of Restoration court and country drinking, assembled by a man who treated fermentation, cookery and natural philosophy as one field of enquiry — because in 1660 they still were. The attributions turn it into a social map: who knew whom, and whose kitchen was worth copying.</p></div>
+      <div class="field"><span class="field-label">Why it still matters</span>
+      <p>Alone on this list, it is still directly usable. Modern mead makers work from Digby. The proportions are given, the process is described, and the results have been reproduced.</p></div>
+      <div class="reads"><span class="field-label">Read it free</span>
+        <p class="read"><span class="kind">Full text · Project Gutenberg #16441 (Macdonell edition)</span><a href="https://www.gutenberg.org/ebooks/16441">gutenberg.org/ebooks/16441</a></p>
+        <p class="read"><span class="kind">1669 first edition · page scans</span><a href="https://archive.org/details/bim_early-english-books-1641-1700_the-closet-of-the-eminen_digby-sir-kenelm_1669">archive.org · EEBO scan of the 1669 edition</a></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Ellis -->
+  <article class="entry">
+    <div class="spine">
+      <div class="year">17<span>36</span></div>
+      <span class="tag vice">Brewing</span>
+      <span class="tag">Anonymous, then not</span>
+    </div>
+    <div>
+      <h3>The London and Country Brewer</h3>
+      <p class="byline">William Ellis · c.1700–1758</p>
+      <div class="field"><span class="field-label">The book</span>
+      <p>Published as by "a person formerly concerned in a common brewhouse at London," later identified as the Hertfordshire agricultural writer William Ellis. It covers malting, hops, water, the differences between London and country practice, cellar management, the adulterations publicans used and how to detect them. It ran through multiple parts and editions across the 1730s and 40s.</p></div>
+      <div class="field"><span class="field-label">The author</span>
+      <p>A farmer at Little Gaddesden who wrote prolifically on agriculture and was regarded by some contemporaries as a compiler who overstated his own experience. Treat the confident passages with the same scepticism you would apply to any trade writer selling expertise.</p></div>
+      <div class="field"><span class="field-label">What it means</span>
+      <p>The first genuinely detailed English brewing manual aimed at practitioners rather than natural philosophers, written at the moment porter was transforming London brewing from a domestic craft into an industry. It documents the technology on the cusp of scaling.</p></div>
+      <div class="field"><span class="field-label">Why it still matters</span>
+      <p>It is the primary source behind most historical recreations of eighteenth-century English beer, and the chapters on adulteration are a small masterpiece of consumer investigation — what publicans put in the barrel, why, and what it tasted like when they did.</p></div>
+      <div class="reads"><span class="field-label">Read it free</span>
+        <p class="read"><span class="kind">1736 second edition, corrected · page scans</span><a href="https://archive.org/details/bim_eighteenth-century_london-and-country-brew_ellis-william_1736">archive.org/details/bim_eighteenth-century_london-and-country-brew_ellis-william_1736</a></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- ================= TABLE & FIELD ================= -->
+  <div class="section-head">
+    <h2>The table &amp; the field</h2>
+    <span class="count">Two</span>
+  </div>
+  <p class="section-note">Gambling and fishing — the two respectable ways to spend a day doing nothing, and the two books that codified them.</p>
+
+  <!-- Walton -->
+  <article class="entry">
+    <div class="spine">
+      <div class="year">16<span>53</span></div>
+      <span class="tag vice">Angling</span>
+      <span class="tag">Five revisions to 1676</span>
+    </div>
+    <div>
+      <h3>The Compleat Angler</h3>
+      <p class="byline">Izaak Walton · 1593–1683 · with Charles Cotton</p>
+      <div class="field"><span class="field-label">The book</span>
+      <p>A dialogue between a veteran angler and his student, walking out from London into the countryside, interspersed with verse, songs, recipes for cooking what they catch, and long pauses at inns. Walton kept expanding it over twenty-five years; the fifth edition of 1676 adds Cotton's section on fly fishing, which is the technically serious part.</p></div>
+      <div class="field"><span class="field-label">The author</span>
+      <p>A London ironmonger turned biographer, a royalist and Anglican who wrote the book in the aftermath of the Civil War and the execution of the king, at a moment when his own side had comprehensively lost. Cotton, his collaborator, was also the author of <em>The Compleat Gamester</em> below.</p></div>
+      <div class="field"><span class="field-label">What it means</span>
+      <p>Read with the date in mind, the pastoral is not decoration but retreat — a deliberate construction of a quiet England to stand against the one that had just torn itself apart. The fishing instruction is real and the politics are entirely submerged, which is the point.</p></div>
+      <div class="field"><span class="field-label">Why it still matters</span>
+      <p>One of the most reprinted books in English, and the template for every subsequent attempt to argue that a slow outdoor hobby is a moral discipline. Also the reason "compleat" survives as a joke spelling.</p></div>
+      <div class="reads"><span class="field-label">Read it free</span>
+        <p class="read"><span class="kind">Full text · Project Gutenberg #683</span><a href="https://www.gutenberg.org/ebooks/683">gutenberg.org/ebooks/683</a></p>
+        <p class="read"><span class="kind">The 1653 first edition, before the expansions</span><a href="https://www.gutenberg.org/ebooks/9198">gutenberg.org/ebooks/9198</a></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Cotton -->
+  <article class="entry">
+    <div class="spine">
+      <div class="year">16<span>74</span></div>
+      <span class="tag vice">Gaming</span>
+      <span class="tag">Published anonymously</span>
+    </div>
+    <div>
+      <h3>The Compleat Gamester</h3>
+      <p class="byline">Charles Cotton · 1630–1687 · attributed</p>
+      <div class="field"><span class="field-label">The book</span>
+      <p>One of the earliest English games compendia: cards, dice, billiards, trucks, bowls and chess, plus riding, racing, archery and cock-fighting, with a discourse on gaming in general, a description of a gaming ordinary and a character sketch of the gamester himself. Crucially, it also explains how the cheats work — loaded dice, marked cards, the confederate at the table.</p></div>
+      <div class="field"><span class="field-label">The author</span>
+      <p>Published anonymously in 1674 and attributed to Cotton during the following century; some of its card rules were lifted wholesale from Randle Cotgrave. Cotton was a poet, translator of Montaigne, and Walton's fishing collaborator — and, by his own account, a heavy loser at cards.</p></div>
+      <div class="field"><span class="field-label">What it means</span>
+      <p>It is a rulebook and a warning in one binding, and it never resolves which it is. The description of the ordinary — the noise, the money, the ruin — reads as moral caution; the chapter that follows tells you how to play basset. The reader is trusted to decide.</p></div>
+      <div class="field"><span class="field-label">Why it still matters</span>
+      <p>It is the main source for how these games were actually played before Hoyle standardised everything in the 1740s, and the fraud chapters are the earliest systematic English account of how a confidence operation is run at a table.</p></div>
+      <div class="reads"><span class="field-label">Read it free</span>
+        <p class="read"><span class="kind">1674 first edition · page scans</span><a href="https://archive.org/details/bim_early-english-books-1641-1700_the-compleat-gamester-_cotton-charles_1674">archive.org · EEBO scan of the 1674 edition</a></p>
+        <p class="read"><span class="kind">1710 edition · more legible type</span><a href="https://archive.org/details/the-compleat-gamester-1710">archive.org/details/the-compleat-gamester-1710</a></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- ================= THE TOWN ================= -->
+  <div class="section-head">
+    <h2>The town</h2>
+    <span class="count">Three</span>
+  </div>
+  <p class="section-note">London itself as the pursuit. A tour, a diary and a dictionary — reportage, confession and lexicon of the same few square miles.</p>
+
+  <!-- Pepys -->
+  <article class="entry">
+    <div class="spine">
+      <div class="year">16<span>60</span></div>
+      <span class="tag vice">All of them</span>
+      <span class="tag">Nine years, in shorthand</span>
+    </div>
+    <div>
+      <h3>The Diary</h3>
+      <p class="byline">Samuel Pepys · 1633–1703 · kept 1660–1669</p>
+      <div class="field"><span class="field-label">The book</span>
+      <p>Nine and a half years of daily entries kept in Shelton's shorthand, covering the Restoration, the plague, the Fire of London and the Dutch raid on the Medway — and, in the same paragraphs and the same tone, what he drank, what he paid for it, which plays he saw, which oaths he swore and broke, how much he had in the house, and a long, self-incriminating record of his pursuit of other women, written in a private pidgin of French, Spanish and Latin when he was most ashamed.</p></div>
+      <div class="field"><span class="field-label">The author</span>
+      <p>A tailor's son who rose to Chief Secretary to the Admiralty and effectively professionalised the Royal Navy's administration. He stopped the diary at thirty-six, fearing he was going blind. He was not, and he lived another thirty-four years without resuming it.</p></div>
+      <div class="field"><span class="field-label">What it means</span>
+      <p>Pepys is the first English writer to record his own appetites without arranging them into a moral shape. He does not defend himself and he does not repent convincingly. The shorthand and the fake foreign language are not concealment from history — they are concealment from his wife, which is why the record stayed honest.</p></div>
+      <div class="field"><span class="field-label">Why it still matters</span>
+      <p>Every book on this list except this one is performing for a reader. Pepys is the control sample: what the same decade looks like when a man is not performing. It is also, incidentally, the best surviving eyewitness account of the Great Fire.</p></div>
+      <div class="reads"><span class="field-label">Read it free</span>
+        <p class="read"><span class="kind">Complete diary, annotated, entry by entry, with an encyclopedia of people and places</span><a href="https://www.pepysdiary.com/">pepysdiary.com</a></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Ned Ward -->
+  <article class="entry">
+    <div class="spine">
+      <div class="year">16<span>98</span></div>
+      <span class="tag vice">The whole town</span>
+      <span class="tag">18 monthly parts</span>
+    </div>
+    <div>
+      <h3>The London Spy</h3>
+      <p class="byline">Ned Ward · 1667–1731</p>
+      <div class="field"><span class="field-label">The book</span>
+      <p>Eighteen sixteen-page instalments, published monthly from November 1698 to May 1700 and collected in 1703. A country scholar abandons his books for real experience and is walked round London by a native guide: taverns, coffee houses, Bartholomew Fair, Bedlam, the Royal Exchange, the gin shops, the brothels, the debtors' prison. Arranged topographically rather than by theme — the structure is the walk.</p></div>
+      <div class="field"><span class="field-label">The author</span>
+      <p>A publican with no formal education, described by a contemporary as of low extraction, who wrote about his own trade and his own customers. He kept an alehouse a mile from where the collected edition was printed.</p></div>
+      <div class="field"><span class="field-label">What it means</span>
+      <p>The nearest thing the period has to immersive reportage, and it is thick with slang and with the mechanics of how the London poor made a living — including through prostitution, robbery and burglary. Ward is not slumming from outside; he is describing the room he works in.</p></div>
+      <div class="field"><span class="field-label">Why it still matters</span>
+      <p>Because of what was done to it. Only four modern editions exist, and all but Paul Hyland's 1993 text are bowdlerised — one 1927 editor announced with satisfaction that the work was now, for the first time, fit for general reading. The originals are the honest text, and the censorship history is itself the story of how a city's own account of itself gets cleaned up.</p></div>
+      <div class="reads"><span class="field-label">Read it free</span>
+        <p class="read"><span class="kind">Full text, 1703 collected edition · Grub Street Project</span><a href="https://www.grubstreetproject.net/texts/T119938/">grubstreetproject.net/texts/T119938/</a></p>
+        <p class="read"><span class="kind">1709 fourth edition · page scans</span><a href="https://archive.org/details/bim_eighteenth-century_the-london-spy-compleat-_ward-edward_1709_1">archive.org · 1709 scan</a></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Grose -->
+  <article class="entry">
+    <div class="spine">
+      <div class="year">17<span>85</span></div>
+      <span class="tag vice">Language</span>
+      <span class="tag">Revised 1811</span>
+    </div>
+    <div>
+      <h3>A Classical Dictionary of the Vulgar Tongue</h3>
+      <p class="byline">Francis Grose · c.1731–1791</p>
+      <div class="field"><span class="field-label">The book</span>
+      <p>A lexicon of slang, cant and obscenity: the jargon of thieves, pickpockets and bawds, university slang, naval slang, and the vulgarisms the fashionable were busy inventing for themselves. Grose collected much of it on foot, at night, in the places the words were spoken. The widely available 1811 edition is a posthumous revision that adds two decades of newer usage.</p></div>
+      <div class="field"><span class="field-label">The author</span>
+      <p>An antiquary and militia captain who produced serious topographical and armour scholarship by day and this by preference. Burns wrote a poem about him. He was, by all accounts, enormous, convivial and entirely without squeamishness.</p></div>
+      <div class="field"><span class="field-label">What it means</span>
+      <p>It is the decoder for everything else on this list. Ward, Harris's List, Rochester and Pepys are all working in registers of English that formal dictionaries deliberately excluded, and Grose is the only contemporary who wrote them down without flinching or moralising.</p></div>
+      <div class="field"><span class="field-label">Why it still matters</span>
+      <p>It preserves an entire spoken vocabulary that would otherwise be gone, and it establishes the principle — still contested — that a dictionary records what people say rather than what they ought to say. Read straight through, it is also very funny.</p></div>
+      <div class="reads"><span class="field-label">Read it free</span>
+        <p class="read"><span class="kind">1811 edition, full text · Project Gutenberg #5402</span><a href="https://www.gutenberg.org/ebooks/5402">gutenberg.org/ebooks/5402</a></p>
+        <p class="read"><span class="kind">Reading version with images</span><a href="https://www.gutenberg.org/cache/epub/5402/pg5402-images.html">gutenberg.org/cache/epub/5402/pg5402-images.html</a></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- ================= THE BEDCHAMBER ================= -->
+  <div class="section-head">
+    <h2>The bedchamber</h2>
+    <span class="count">Six</span>
+  </div>
+  <div class="preamble">
+    <p>A word before this section, because the framing matters. "Women" was not a gentlemanly pursuit with a literature the way drinking and gaming were. What the period actually produced was four distinct things, and they are not morally equivalent: pornography written by men for men, libertine verse, a commercial directory of women in the sex trade, and one long memoir by a man who thought of himself as a lover.</p>
+    <p>All six are worth reading and all six are freely available. But <em>Harris's List</em> in particular is not a curiosity — it is a catalogue of real, mostly poor, mostly young women, published for buyers, and the women in it did not consent to being reviewed. It is an extraordinary historical source precisely because of that, not despite it. The entries below say what each book is rather than what its own century called it.</p>
+  </div>
+
+  <!-- Aretino -->
+  <article class="entry">
+    <div class="spine">
+      <div class="year">15<span>34</span></div>
+      <span class="tag vice">The origin</span>
+      <span class="tag">Six days, two parts</span>
+    </div>
+    <div>
+      <h3>Ragionamenti — The Dialogues</h3>
+      <p class="byline">Pietro Aretino · 1492–1556</p>
+      <div class="field"><span class="field-label">The book</span>
+      <p>Two sets of three dialogues, published 1534 and 1536. In the first, an older woman, Nanna, tells her friend Antonia about her successive lives as nun, wife and whore, in order to decide which trade her daughter Pippa should enter — the premise being that these are the only three available. In the second, she trains the daughter. Explicit throughout, and structurally a satire: the church, the papal court and the institution of marriage all take heavier fire than the brothel does.</p></div>
+      <div class="field"><span class="field-label">The author</span>
+      <p>The "scourge of princes" — a Venetian satirist who made a living writing letters that powerful men paid to keep unpublished, which is to say he invented literary blackmail as a business model. He was famous across Europe, and in Elizabethan England his name was a synonym for obscenity long before most people had read him.</p></div>
+      <div class="field"><span class="field-label">What it means</span>
+      <p>Conventionally called the first pornographic book of the Christian era, and the first written in ordinary vernacular speech rather than a learned register. But the dialogues are voiced by women deliberately excluded from power, and Aretino uses that outsider position to attack the institutions that excluded them. The sex has a political function; it is not only there for its own sake.</p></div>
+      <div class="field"><span class="field-label">Why it still matters</span>
+      <p>Everything else in this section descends from it. Cleland is writing in Aretino's form two hundred years later; the whole English tradition of the sexually explicit book as a vehicle for social satire starts here.</p></div>
+      <div class="caveat"><span class="field-label">Access caveat</span>
+        <p>The Italian original circulates freely — the 1920 Corbaccio edition of Part One is online as a PDF: <a href="https://librarycollections.law.umn.edu/documents/darrow/Aretino_I_Ragionamenti.pdf">librarycollections.law.umn.edu · Aretino, I Ragionamenti</a></p>
+        <p>English is the problem. Raymond Rosenthal's <em>Dialogues</em> (1971) is effectively the only complete modern English translation and remains in copyright. If you don't read Italian, this one has to be bought.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Rochester -->
+  <article class="entry">
+    <div class="spine">
+      <div class="year">16<span>80</span></div>
+      <span class="tag vice">Verse</span>
+      <span class="tag">Dead at 33</span>
+    </div>
+    <div>
+      <h3>The Works of the Right Honourable John, Earl of Rochester</h3>
+      <p class="byline">John Wilmot, 2nd Earl of Rochester · 1647–1680</p>
+      <div class="field"><span class="field-label">The book</span>
+      <p>Satires, songs, translations and occasional poems, circulated in manuscript during his life and printed in ragged, unauthorised collections after his death. The reputation rests on the obscene verse, but the strongest poem in the canon is <em>A Satyr Against Reason and Mankind</em>, which argues that a man would be better off as a dog, a monkey or a bear than as the vain animal so proud of being rational — and that reason is a will-o'-the-wisp that errs fifty times for every once instinct does.</p>
+      <p>The obscenity is not incidental and it is not coy. Rochester uses the most degraded available language deliberately, including against himself.</p></div>
+      <div class="field"><span class="field-label">The author</span>
+      <p>A courtier of Charles II, wit, duellist, sometime impersonator of a quack doctor on Tower Street, and comprehensive alcoholic. He was dead at thirty-three, probably of syphilis and drink. His deathbed conversion under Bishop Burnet became a bestselling pamphlet — one later edition was retitled <em>The Libertine Overthrown</em> — and biographers have argued about its sincerity ever since.</p></div>
+      <div class="field"><span class="field-label">What it means</span>
+      <p>Rochester is the strongest case that libertinism was a philosophical position and not just an appetite. The satires are an argument: that reason is a pretence, that appetite is what actually moves people, and that the polite fictions of court and church exist to disguise this. He then lived the argument to its conclusion, which killed him.</p></div>
+      <div class="field"><span class="field-label">Why it still matters</span>
+      <p>Voltaire, who had reason to notice, wrote that the gossips had reduced Rochester to a man of pleasure and wanted the poet recognised instead. That correction is still needed. Underneath the scandal is one of the best and bleakest satirists in English.</p></div>
+      <div class="reads"><span class="field-label">Read it free</span>
+        <p class="read"><span class="kind">1718 collected Works · Project Gutenberg #44891</span><a href="https://www.gutenberg.org/ebooks/44891">gutenberg.org/ebooks/44891</a></p>
+        <p class="read"><span class="kind">Reading version</span><a href="https://www.gutenberg.org/files/44891/44891-h/44891-h.htm">gutenberg.org/files/44891/44891-h/44891-h.htm</a></p>
+      </div>
+      <div class="caveat"><span class="field-label">Note on the text</span>
+        <p>The early printed collections are unreliable — they mix in poems by other hands and omit or soften others. For an authoritative canon you want a modern scholarly edition (Harold Love's Oxford text is the standard). The Gutenberg 1718 volume is fine for reading and bad for citing.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Cleland -->
+  <article class="entry">
+    <div class="spine">
+      <div class="year">17<span>48</span></div>
+      <span class="tag vice">The novel</span>
+      <span class="tag">Written in debtors' prison</span>
+    </div>
+    <div>
+      <h3>Memoirs of a Woman of Pleasure — "Fanny Hill"</h3>
+      <p class="byline">John Cleland · 1709–1789</p>
+      <div class="field"><span class="field-label">The book</span>
+      <p>Two long letters in which a country girl arriving in London recounts her career in the sex trade and her eventual respectable marriage. Explicit from end to end, and written entirely without the standard vocabulary — Cleland invented an elaborate metaphorical language for sex, partly as a technical challenge and partly as legal cover. Commonly called the first original English prose pornography and the first to use the form of the novel.</p></div>
+      <div class="field"><span class="field-label">The author</span>
+      <p>A former East India Company employee who wrote it to get himself out of debtors' prison. It worked, then backfired: within a year he and his publisher were arrested for corrupting the King's subjects, Cleland renounced the book in court, and it was formally withdrawn. Pirated editions immediately followed and never stopped.</p></div>
+      <div class="field"><span class="field-label">What it means</span>
+      <p>The narrator is a woman, the author is a man, and the book's entire achievement — its style, its wit, its extraordinary metaphorical invention — sits on top of that ventriloquism. Fanny's cheerfulness about her trade is Cleland's construction, not testimony. Read against <em>Harris's List</em> below, which describes the same industry from the buyer's side, the fiction becomes visible as fiction.</p></div>
+      <div class="field"><span class="field-label">Why it still matters</span>
+      <p>It remained an underground text until the 1960s, when the obscenity ban was finally challenged — making it a two-century case study in what censorship does to a book. And Cleland's solution to writing sex without the words for it is still the most technically interesting thing anyone has done in the genre.</p></div>
+      <div class="reads"><span class="field-label">Read it free</span>
+        <p class="read"><span class="kind">Full text · Project Gutenberg #20028</span><a href="https://www.gutenberg.org/ebooks/20028">gutenberg.org/ebooks/20028</a></p>
+        <p class="read"><span class="kind">1749 first edition · page scans</span><a href="https://archive.org/details/clelandfannyhill01">archive.org/details/clelandfannyhill01</a></p>
+        <p class="read"><span class="kind">Wikisource transcription, divided by letter</span><a href="https://en.wikisource.org/wiki/Fanny_Hill:_Memoirs_of_a_Woman_of_Pleasure">en.wikisource.org · Fanny Hill</a></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Harris's List -->
+  <article class="entry">
+    <div class="spine">
+      <div class="year">17<span>57</span></div>
+      <span class="tag vice">Annual directory</span>
+      <span class="tag">Ceased 1795</span>
+    </div>
+    <div>
+      <h3>Harris's List of Covent Garden Ladies</h3>
+      <p class="byline">Anonymous · published annually, 1757–1795</p>
+      <div class="field"><span class="field-label">The book</span>
+      <p>A pocketbook, sold for two shillings and sixpence, subtitled the Man of Pleasure's Kalendar. Each edition described roughly 120 to 190 women working in and around Covent Garden — appearance, address, specialisms, price — in florid, deliberately erotic prose. Names are usually partially blanked. Contemporary estimates put circulation around 8,000 copies a year. Publication stopped after its producers were prosecuted in 1795.</p>
+      <p>There was a precedent: a 1691 <em>Catalogue of Jilts, Cracks &amp; Prostitutes</em> did the same for the women around Bartholomew Fair, listing twenty-one of them and their prices.</p></div>
+      <div class="field"><span class="field-label">The author</span>
+      <p>Unknown, and contested. The "Harris" of the title is usually connected to Jack Harris, a Covent Garden waiter and pimp, but recent bibliographic work has complicated the attribution considerably. It was a commercial product with a publisher, an advertising strategy and a distribution network, which is part of what makes it interesting.</p></div>
+      <div class="field"><span class="field-label">What it means</span>
+      <p>It is the sex trade documented as an industry: pricing, geography, marketing, market segmentation, and a customer base explicitly middle-class rather than aristocratic. The prose is written to arouse, which means it is unreliable about the women and reliable about the buyers — what they wanted, what they were told they wanted, and what they were willing to pay.</p>
+      <p>The women themselves are visible only through the language of men selling access to them. That absence is the most important thing in the document.</p></div>
+      <div class="field"><span class="field-label">Why it still matters</span>
+      <p>Almost nothing else survives that maps a Georgian trade at street level with names, addresses and prices attached. Historians of eighteenth-century London use it heavily and carefully. It is also a permanent argument about what it means to preserve a source produced by exploitation — the record exists because the exploitation was commercialised, and the alternative to reading it critically is that these women leave no trace at all.</p></div>
+      <div class="reads"><span class="field-label">Read it free</span>
+        <p class="read"><span class="kind">Digital scholarly archive · 16 of the 18 surviving editions, with historical analysis</span><a href="https://harrisslist.prisms.digital/">harrisslist.prisms.digital</a></p>
+        <p class="read"><span class="kind">Full text · Project Gutenberg #42075</span><a href="https://www.gutenberg.org/ebooks/42075">gutenberg.org/ebooks/42075</a></p>
+        <p class="read"><span class="kind">Original scans · 1788, 1789, 1793 editions</span><a href="https://archive.org/details/bim_eighteenth-century_harriss-list-of-covent-_harris_1789">archive.org · 1789 edition</a></p>
+        <p class="read"><span class="kind">Serial listing of all located editions</span><a href="https://onlinebooks.library.upenn.edu/webbin/serial?id=harriscovent">onlinebooks.library.upenn.edu</a></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Casanova -->
+  <article class="entry">
+    <div class="spine">
+      <div class="year">17<span>94</span></div>
+      <span class="tag vice">Memoir</span>
+      <span class="tag">Written 1789–98</span>
+    </div>
+    <div>
+      <h3>Histoire de ma vie — The Memoirs</h3>
+      <p class="byline">Giacomo Casanova · 1725–1798 · trans. Arthur Machen, 1894</p>
+      <div class="field"><span class="field-label">The book</span>
+      <p>Twelve volumes, written in French in old age while Casanova was serving as librarian to a Bohemian count and profoundly bored. It covers his escape from the Leads prison in Venice, his career as a gambler, spy, cabbalist, lottery promoter and confidence man across most of Europe, his meetings with Voltaire, Frederick the Great and Catherine the Great — and, threaded through all of it, the affairs.</p></div>
+      <div class="field"><span class="field-label">The author</span>
+      <p>A Venetian actor's son who was ordained, expelled, imprisoned, escaped, and spent the rest of his life talking his way into and out of European courts. He wrote the memoirs with no expectation of publication in his lifetime, and the manuscript's own history — suppressed, bowdlerised, lost, sold, and only published in full in the 1960s — is nearly as strange as the contents.</p></div>
+      <div class="field"><span class="field-label">What it means</span>
+      <p>It is the fullest surviving account of eighteenth-century Europe from below the level of the archive: what an inn cost, how credit worked between cities, how a stranger with good manners and no money got a seat at a table. The seductions are what it is famous for and the least interesting part; Casanova is at his best on logistics, cons and the mechanics of moving through a class system he did not belong to.</p>
+      <p>He is also, obviously, an interested party. Several episodes involve women who were very young, and he narrates them with the self-serving ease of a man writing his own defence with no one left alive to contradict it.</p></div>
+      <div class="field"><span class="field-label">Why it still matters</span>
+      <p>Read as a travel book — which it substantially is — it belongs beside the first volume of this list. It is the last great pre-revolutionary account of Europe as a single connected space you could talk your way across, written by someone who did exactly that for forty years.</p></div>
+      <div class="reads"><span class="field-label">Read it free</span>
+        <p class="read"><span class="kind">Complete Machen translation, 1894 · Project Gutenberg #2981</span><a href="https://ia600702.us.archive.org/16/items/thecompletememoi02981gut/2981-h/2981-h.htm">archive.org · Gutenberg #2981, complete</a></p>
+      </div>
+      <div class="caveat"><span class="field-label">Note on the text</span>
+        <p>Machen worked from the nineteenth-century Laforgue edition, which rewrote Casanova's French and cut what it found unacceptable. It is the only complete English text in the public domain and it is not the real book. Willard Trask's translation (1966–71), made from the recovered original manuscript, is the scholarly standard and is in copyright.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Sade -->
+  <article class="entry">
+    <div class="spine">
+      <div class="year">17<span>95</span></div>
+      <span class="tag vice">The end of it</span>
+      <span class="tag">French only, free</span>
+    </div>
+    <div>
+      <h3>Aline et Valcour, ou Le Roman Philosophique</h3>
+      <p class="byline">Donatien Alphonse François, Marquis de Sade · 1740–1814</p>
+      <div class="field"><span class="field-label">The book</span>
+      <p>An epistolary novel written in the Bastille in 1788 and published in 1795 — the least notorious and most conventionally readable of Sade's major works, and the one he was willing to put his name near. It is an adventure novel with an argument inside it, contrasting an imagined African despotism with an imagined South Seas utopia in order to make a case about natural law, property and power.</p></div>
+      <div class="field"><span class="field-label">The author</span>
+      <p>An aristocrat who spent roughly thirty-two years of his life imprisoned under three successive regimes, and who wrote most of his work in cells. The rest of his output is genuinely extreme and much of it depicts violent, non-consensual and criminal acts at length.</p></div>
+      <div class="field"><span class="field-label">What it means</span>
+      <p>This is the terminus of the libertine line that starts with Aretino two and a half centuries earlier. Aretino used sex to satirise institutions; Rochester used it to argue that reason is a pretence; Sade takes the same premise — that appetite is the only real motive — and follows it past satire into a philosophical position that most readers find unbearable. Included here as the endpoint of the argument, not as a recommendation of the rest of the shelf.</p></div>
+      <div class="field"><span class="field-label">Why it still matters</span>
+      <p>Because the question he forces is a real one and no one on this list answers it: if appetite is what actually moves people, what exactly is stopping anyone? Every writer above ducks it. Sade does not, and the answer he arrives at is the reason he was locked up.</p></div>
+      <div class="caveat"><span class="field-label">Access caveat</span>
+        <p>Both volumes are on Project Gutenberg <em>in French only</em> — search the Gutenberg catalogue for "Aline et Valcour." No public-domain English translation exists; John Phillips's Oxford translation of other works and the Wainhouse/Seaver texts are all in copyright.</p>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<footer class="wrap">
+  <h2>Notes on this volume</h2>
+  <p>I stopped at sixteen rather than padding to twenty. Everything here has either a verified working link or an explicit note about why it doesn't — a list of eighteenth-century titles with dead or invented URLs would be worse than a shorter one that works.</p>
+  <p>Three entries need money or an institution: Brathwait (EEBO), Aretino in English (Rosenthal, in copyright), and Sade in English (no public-domain translation). Two more are free but in compromised texts: the 1718 Rochester mixes in poems by other hands, and Machen's Casanova translates a nineteenth-century rewrite rather than the manuscript. Those are flagged in place.</p>
+  <p>The cleanest reading order is probably Grose first, as a glossary, then Ward, then Pepys. After that the rest of the town is legible.</p>
+  <p class="colophon">Sixteen titles · 1534–1795 · companion to volume one · compiled August 2026 · links verified at time of compilation</p>
+</footer>
+
+</body>
+</html>
